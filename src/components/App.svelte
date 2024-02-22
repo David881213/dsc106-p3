@@ -21,7 +21,7 @@
 
   onMount(async () => {
     try {
-      data = await d3.csv('/nba_player_per_game_clean.csv');
+      data = await d3.csv('/static/nba_player_per_game_clean.csv');
       filterPlayers();
     } catch (error) {
       console.error('Error loading data:', error);
@@ -46,7 +46,7 @@
     totalFilteredPlayers = filteredPlayers.length;
   }
 
-  const getImagePath = (player) => `NBA_Player_Photo/${player['Player-additional']}.jpg`;
+  const getImagePath = (player) => `/static/NBA_Player_Photo/${player['Player-additional']}.jpg`;
   
   function showTooltip(player, event) {
     const tooltip = event.currentTarget.querySelector('.player-info');
