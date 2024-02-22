@@ -20,7 +20,7 @@
   let teams = ['ATL', 'BOS', 'BRK', 'CHI', 'CHO', 'CLE', 'DAL', 'DEN', 'DET', 'GSW', 'HOU', 'IND', 'LAC', 'LAL', 'MEM', 'MIA', 'MIL', 'MIN', 'NOP', 'NYK', 'OKC', 'ORL', 'PHI', 'PHO', 'POR', 'SAC', 'SAS', 'TOR', 'UTA', 'WAS'];
 
   onMount(async () => {
-    const response = await fetch('/nba_player_per_game_clean.csv');
+    const response = await fetch('nba_player_per_game_clean.csv');
     const csvText = await response.text();
     data = d3.csvParse(csvText, d3.autoType); // Parse the CSV data and assign it to data
     filterPlayers(); // You might want to call this function to filter players immediately after fetching data
