@@ -22,8 +22,8 @@
   onMount(async () => {
     const response = await fetch('nba_player_per_game_clean.csv');
     const csvText = await response.text();
-    data = d3.csvParse(csvText, d3.autoType); // Parse the CSV data and assign it to data
-    filterPlayers(); // You might want to call this function to filter players immediately after fetching data
+    data = d3.csvParse(csvText, d3.autoType);
+    filterPlayers();
     console.log(tempData);
   });
 
@@ -186,7 +186,7 @@ function toPercentage(value) {
   </div>
 
   <div class="player-list-title-container">
-    <h2>Link to readme.txt click <a href="https://github.com/David881213/dsc106-p3/blob/main/static/readme.txt" target="_blank">here</a>.</h2>
+    <h2>Link to write-up (readme.txt) click <a href="https://github.com/David881213/dsc106-p3/blob/main/static/readme.txt" target="_blank">here</a>.</h2>
     <h2>Players comparison ({selectedPlayers.length}/{2})</h2>
   </div>
   
