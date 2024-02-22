@@ -45,7 +45,7 @@
     totalFilteredPlayers = filteredPlayers.length;
   }
 
-  const getImagePath = (player) => `/${player['Player-additional']}.jpg`;
+  const getImagePath = (player) => `NBA_Player_Photo/${player['Player-additional']}.jpg`;
   
   function showTooltip(player, event) {
     const tooltip = event.currentTarget.querySelector('.player-info');
