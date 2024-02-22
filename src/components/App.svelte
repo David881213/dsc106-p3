@@ -21,7 +21,9 @@
 
   onMount(async () => {
     try {
-      data = await d3.csv('/nba_player_per_game_clean.csv');
+      const response = await fetch('/nba_player_per_game_clean.csv');
+      const csv = await response.text();
+      data = d3.csvParse(csv, d3.autoType); // Use d3.csvParse to parse the CSV data
       filterPlayers();
     } catch (error) {
       console.error('Error loading data:', error);
