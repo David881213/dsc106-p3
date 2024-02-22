@@ -187,6 +187,9 @@ function toPercentage(value) {
   </div>
 
   <div class="player-list-title-container">
+    {#if data.length > 0}
+      <h2>{data[0].Player}</h2>
+    {/if}
     <h2>Players comparison ({selectedPlayers.length}/{2})</h2>
   </div>
   
