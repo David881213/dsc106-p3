@@ -20,14 +20,10 @@
   let teams = ['ATL', 'BOS', 'BRK', 'CHI', 'CHO', 'CLE', 'DAL', 'DEN', 'DET', 'GSW', 'HOU', 'IND', 'LAC', 'LAL', 'MEM', 'MIA', 'MIL', 'MIN', 'NOP', 'NYK', 'OKC', 'ORL', 'PHI', 'PHO', 'POR', 'SAC', 'SAS', 'TOR', 'UTA', 'WAS'];
 
   onMount(async () => {
-    try {
-      const response = await fetch('/nba_player_per_game_clean.csv');
-      const csv = await response.text();
-      data = d3.csvParse(csv, d3.autoType); // Use d3.csvParse to parse the CSV data
-      filterPlayers();
-    } catch (error) {
-      console.error('Error loading data:', error);
-    }
+    const response = await fetch('/nba_player_per_game_clean.csv');
+    const csvText = await response.text();
+    data = d3.csvParse(csvText, d3.autoType); // Parse the CSV data and assign it to data
+    filterPlayers(); // You might want to call this function to filter players immediately after fetching data
   });
 
   function filterPlayers() {
