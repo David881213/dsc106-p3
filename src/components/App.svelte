@@ -20,12 +20,11 @@
   let teams = ['ATL', 'BOS', 'BRK', 'CHI', 'CHO', 'CLE', 'DAL', 'DEN', 'DET', 'GSW', 'HOU', 'IND', 'LAC', 'LAL', 'MEM', 'MIA', 'MIL', 'MIN', 'NOP', 'NYK', 'OKC', 'ORL', 'PHI', 'PHO', 'POR', 'SAC', 'SAS', 'TOR', 'UTA', 'WAS'];
 
   onMount(async () => {
-    try {
-      data = await d3.csv('/nba_player_per_game_clean.csv');
-      filterPlayers();
-    } catch (error) {
-      console.error('Error loading data:', error);
-    }
+    const response = await fetch('nba_player_per_game_clean.csv');
+    const csvText = await response.text();
+    data = d3.csvParse(csvText, d3.autoType); // Parse the CSV data and assign it to data
+    filterPlayers(); // You might want to call this function to filter players immediately after fetching data
+    console.log(tempData);
   });
 
   function filterPlayers() {
@@ -46,7 +45,7 @@
     totalFilteredPlayers = filteredPlayers.length;
   }
 
-  const getImagePath = (player) => `/${player['Player-additional']}.jpg`;
+  const getImagePath = (player) => `NBA_Player_Photo/${player['Player-additional']}.jpg`;
   
   function showTooltip(player, event) {
     const tooltip = event.currentTarget.querySelector('.player-info');
