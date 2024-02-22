@@ -187,7 +187,7 @@ function toPercentage(value) {
 
   <div class="player-list-title-container">
     <h2>Link to write-up (readme.txt) click <a href="https://github.com/David881213/dsc106-p3/blob/main/static/readme.txt" target="_blank">here</a>.</h2>
-    <h2>Players comparison ({selectedPlayers.length}/{2})</h2>
+    <h2>Players comparison ({selectedPlayers.length}/{2}) (Clik the players photo below!!!)</h2>
   </div>
   
   <div class="player-details-container">
