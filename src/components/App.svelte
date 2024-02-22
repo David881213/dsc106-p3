@@ -186,9 +186,7 @@ function toPercentage(value) {
   </div>
 
   <div class="player-list-title-container">
-    {#if data.length > 0}
-      <h2>{data[0].Player}</h2>
-    {/if}
+    <h2>Link to readme.txt click <a href="https://github.com/David881213/dsc106-p3/blob/main/static/readme.txt" target="_blank">here</a>.</h2>
     <h2>Players comparison ({selectedPlayers.length}/{2})</h2>
   </div>
   
